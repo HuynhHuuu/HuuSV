@@ -101,7 +101,7 @@ app.get("/", (request, response) => {
     }
   });
 
-//delete field
+
   app.delete("/api/deletefield", async (request, response) => {
     let collectionName = request.body.collectionName;
     let docId = request.body.docId;
@@ -117,7 +117,7 @@ app.get("/", (request, response) => {
     response.send("ahihihihih!!!!!");
   });
 
-//delete 1 document
+
   app.delete("/api/delete", async (request,response) => {
     let collectionName = request.body.collectionName;
     let docId = request.body.docId;
@@ -125,7 +125,7 @@ app.get("/", (request, response) => {
       response.send(data);
   })
 
-  //delete nhiều document
+ 
   app.delete("/api/deletedocument", async (request,response) => {
     let collectionName = request.body.collectionName;
     let docIds = request.body.docIds;
@@ -141,7 +141,7 @@ app.get("/", (request, response) => {
     }
   })
 
-  //delete tất cả document trong collection
+ 
   app.delete("/api/:name", async function (request, response) {
     let params = request.params.name;
     let querySnapshot = firestore.collection(params).get()
